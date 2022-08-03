@@ -102,18 +102,29 @@ app.get('/api/:id',  (req, res) => {
 })
 
 // Update book
-app.put('/api/updateBook',verifyToken,(req,res)=>{
-    console.log(req.body)
-    id=req.body.id,
-    title= req.body.title,
-    image = req.body.image,
-    author = req.body.author,
-    about = req.body.about,
-    Bookdata.findByIdAndUpdate({"_id":id},{$set:{"title":title, "image":image, "author":author, "about":about}})
-   .then(function(){
-       res.send();
-   })
- })
+app.put("/api/updateBook", (req, res) => {
+    // console.log(req.body);
+    (id = req.body._id),
+      (title = req.body.title),
+      (author = req.body.author),
+      (image = req.body.image),
+      (about = req.body.about),
+      Bookdata
+        .findByIdAndUpdate(
+          { _id: id },
+          {
+            $set: {
+              title: title,
+              author: author,
+              image: image,
+              about: about,
+            },
+          }
+        )
+        .then(function () {
+          res.send();
+        });
+  });
 
 //  Delete Book
 app.delete('/api/deleteBook/:id',verifyToken, (req,res)=>{
