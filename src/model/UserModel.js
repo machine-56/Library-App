@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri ="mongodb+srv://admin:szebLWflCje95WAi@cluster.ibfzgkq.mongodb.net/?retryWrites=true&w=majority";
+const uri ="mongodb+srv://admin:szebLWflCje95WAi@cluster.ibfzgkq.mongodb.net/test";
 mongoose.connect(uri,{
     useNewUrlParser: true,
     useUnifiedTopology: true

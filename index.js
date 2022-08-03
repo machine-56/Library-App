@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const Bookdata = require('./src/model/BookModel');
 const Userdata = require('./src/model/UserModel');
 
+const PORT = process.env.PORT || 5465;
 const app = new express;
 const path = require('path');
 
@@ -143,7 +144,6 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/frontend/index.html'))
 });
 
-PORT=5465;
-app.listen(process.env.port || PORT,()=>{
-    console.log(`app listining on port ${PORT}`);
-})
+app.listen(PORT, function () {
+  console.log(`listening to port ${PORT}`);
+});

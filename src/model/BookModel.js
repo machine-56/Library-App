@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri ="mongodb+srv://admin:szebLWflCje95WAi@cluster.ibfzgkq.mongodb.net/?retryWrites=true&w=majority";
+const uri ="mongodb+srv://admin:szebLWflCje95WAi@cluster.ibfzgkq.mongodb.net/test";
 mongoose.connect(uri,{
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -19,6 +19,6 @@ var NewBookSchema = new Schema({
     about : String,
 });
 
-var Bookdata = new mongoose.model('books', NewBookSchema);
+var Bookdata = new mongoose.model('book', NewBookSchema);
 
 module.exports = Bookdata;
